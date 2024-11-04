@@ -42,6 +42,7 @@ const Main = ({kanbanId}:{kanbanId:string}) => {
     document.body.style.backgroundImage = "url(/asset/2.png)";
 
     socket.on("commentAdded", async(data) => {
+      console.log(data)
       await initialize();
     });
 
