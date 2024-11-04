@@ -4,7 +4,13 @@ const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
 const app = express();
-const server = https.createServer(app);
+
+const options = {
+  key: fs.readFileSync("path/to/your/server.key"), // SSL private key
+  cert: fs.readFileSync("path/to/your/server.crt") // SSL certificate
+};
+
+const server = https.createServer(options,app);
 const io = socketIo(server, {
   cors: {
     path:"/api/socket",
