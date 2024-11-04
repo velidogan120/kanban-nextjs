@@ -2,6 +2,6 @@
 
 import { io } from "socket.io-client";
 
-export const socket = io("kanban-velidogan120.vercel.app", {transports: ["polling"],
+export const socket = io("kanban-server-production-f13f.up.railway.app", {transports: ["polling"],
     withCredentials: true,
   });
