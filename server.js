@@ -13,7 +13,6 @@ const options = {
 const server = https.createServer(options,app);
 const io = socketIo(server, {
   cors: {
-    path:"/api/socket",
     origin: "https://kanban-velidogan120.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
