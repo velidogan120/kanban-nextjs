@@ -18,8 +18,6 @@ const io = socketIo(server, {
     credentials: true
   },
   transports: ["websocket"],
-  addTrailingSlash: false
-
 });
 
 io.on("connection", (socket) => {
