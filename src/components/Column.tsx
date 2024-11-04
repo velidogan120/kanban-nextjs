@@ -12,7 +12,7 @@ import { RootState } from '@/redux/store'
 import { useFormik } from 'formik'
 import { inputSchemas } from "@/schemas"
 import { useDroppable } from '@dnd-kit/core'
-import { socket } from "@/socket"
+import { socket } from "@/api/socket"
 import { FormikHelpers } from "formik"
 
 
