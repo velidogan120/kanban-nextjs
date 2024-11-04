@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    path:"/socket",
+    path:"/api/socket",
     origin: "https://kanban-velidogan120.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
