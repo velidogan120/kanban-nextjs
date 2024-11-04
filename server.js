@@ -3,45 +3,60 @@ const http = require("http");
 const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
-const app = express();
+const dev = process.env.NODE_ENV;
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-const server = http.createServer(app);
-const io = socketIo(server, {
-  cors: {
-    origin: "https://kanban-velidogan120.vercel.app",
-    methods: ["GET", "POST"],
-    credentials: true
-  },
-  transports: ["websocket"],
-});
 
-io.on("connection", (socket) => {
-  console.log("New client connected");
-
-  socket.on("commentAdd", (data) => {
-    console.log(data)
-    io.emit("commentAdded", data);
+app.prepare().then(() => {
+  const server = express();
+  const httpServer = http.createServer(server);
+  const io = socketIo(httpServer, {
+    cors: {
+      origin: "https://your-frontend-domain.com", // replace with your frontend URL
+      methods: ["GET", "POST"],
+      credentials: true
+    },
   });
 
-  socket.on("commentDelete", (data) => {
-    console.log(data)
-    io.emit("commentDeleted", data);
+  io.on("connection", (socket) => {
+    console.log("New client connected");
+  
+    socket.on("commentAdd", (data) => {
+      console.log(data)
+      io.emit("commentAdded", data);
+    });
+  
+    socket.on("commentDelete", (data) => {
+      console.log(data)
+      io.emit("commentDeleted", data);
+    });
+  
+    socket.on("commentVote", (data) => {
+      console.log(data)
+      io.emit("commentVoted", data);
+    });
+  
+    socket.on("commentStep", (data) => {
+      console.log(data)
+      io.emit("commentStepOver", data);
+    });
+  
+    socket.on("btnDisable", (data) => {
+      console.log(data)
+      io.emit("btnDisabled", data);
+    });
   });
+  
+  server.listen(port, () => console.log(`Listening on port ${port}`));
+})
+// const server = http.createServer(app);
+// const io = socketIo(server, {
+//   cors: {
+//     origin: "https://kanban-velidogan120.vercel.app",
+//     methods: ["GET", "POST"],
+//     credentials: true
+//   },
+//   transports: ["websocket"],
+// });
 
-  socket.on("commentVote", (data) => {
-    console.log(data)
-    io.emit("commentVoted", data);
-  });
-
-  socket.on("commentStep", (data) => {
-    console.log(data)
-    io.emit("commentStepOver", data);
-  });
-
-  socket.on("btnDisable", (data) => {
-    console.log(data)
-    io.emit("btnDisabled", data);
-  });
-});
-
-server.listen(port, () => console.log(`Listening on port ${port}`));

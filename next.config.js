@@ -6,6 +6,7 @@ module.exports = {
         PROJECT_ID: "kanban-88c3a",
         STORAGE_BUCKET: "kanban-88c3a.appspot.com",
         MESSAGİNGSENDER_ID: "578551193524",
-        APP_ID: "1:578551193524:web:d6546409cfa89c65a49ce1"
+        APP_ID: "1:578551193524:web:d6546409cfa89c65a49ce1",
+        NODE_ENV:"node server.js"
     },
 }
