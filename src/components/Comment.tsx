@@ -10,7 +10,7 @@ import { addComment, deleteComment, setBtnDisabled, voteComment } from "@/redux/
 import { useDraggable } from '@dnd-kit/core';
 import { IComment } from '@/Types/IComment';
 import { IColumn } from '@/Types/IColumn';
-import { socket } from "@/api/socket";
+import { socket } from '@/socket';
 
 const Comment = ({column,comment,id}:{column:IColumn,comment:IComment,id:string}) => {
   const kanbanId = useSelector((state:RootState)=> state.comment.kanbanId);

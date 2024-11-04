@@ -12,7 +12,7 @@ import { addComment, deleteComment, nextStep, setBtnDisabled, setKanbanId, setSe
 import { RootState, store } from "@/redux/store"
 import { addStepFromDatabase, fetchCommentFromDatabase, fetchSessionsVotesFromDatabase, fetchStepFromDatabase, updateCommentFromDatabase } from "@/services/firestore"
 import { DndContext, DragEndEvent } from "@dnd-kit/core"
-import { socket } from "@/api/socket"
+import { socket } from "@/socket"
 import { ISessionVote } from "@/Types/ISessionVote"
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
