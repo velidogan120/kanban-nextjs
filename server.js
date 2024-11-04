@@ -1,17 +1,11 @@
 const express = require("express");
-const https = require("https");
-const fs = require("fs");
+const http = require("http");
 const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
 const app = express();
 
-const options = {
-  key: fs.readFileSync("path/to/your/server.key"), // SSL private key
-  cert: fs.readFileSync("path/to/your/server.crt") // SSL certificate
-};
-
-const server = https.createServer(options,app);
+const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
     origin: "https://kanban-velidogan120.vercel.app",
