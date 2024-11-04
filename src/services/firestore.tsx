@@ -45,8 +45,12 @@ export const updateCommentFromDatabase = async(kanbanId:string,id:string,{...dat
     const veri = await updateDoc(doc(db, `kanban/${kanbanId}/comments/${id}`),{...data});
 }
 
-export const fetchCommentFromDatabase = async (kanbanId:string) => {
+export const fetchCommentFromDatabase = async (kanbanId:string):Promise<(IComment & { id: string })[]> => {
     const q = query(collection(db, `kanban/${kanbanId}/comments`));
     const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const comments = querySnapshot.docs.map((doc) => {
+        const data = doc.data() as IComment; 
+        return { id: doc.id, ...data };
+    });
+    return comments
 }

@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { addComment, deleteComment, nextStep, setBtnDisabled, setKanbanId, setSessionId, setSessionsVotes, setStep, setTotalVote } from "@/redux/slices/commentSlice"
 import { RootState, store } from "@/redux/store"
 import { addStepFromDatabase, fetchCommentFromDatabase, fetchSessionsVotesFromDatabase, fetchStepFromDatabase, updateCommentFromDatabase } from "@/services/firestore"
-import { DndContext } from "@dnd-kit/core"
+import { DndContext, DragEndEvent } from "@dnd-kit/core"
 import { socket } from "@/socket"
 import { ISessionVote } from "@/Types/ISessionVote"
 import jsPDF from "jspdf";
@@ -83,10 +83,13 @@ const Main = ({kanbanId}:{kanbanId:string}) => {
     dispatch(setSessionsVotes(sessionsVotesDb));
   }
   
-  const handleDropEnd = async(item) => {
-    const comment = comments.find((comment) => comment.id == item.active.id);
+  const handleDropEnd = async(event:DragEndEvent) => {
+    const { active, over } = event; 
+    if (!active || !over) return;
+
+    const comment = comments.find((comment) => comment.id == active.id);
     if (!comment) return;
-    const updatedComment = { ...comment, column: String(item.over.id) };
+    const updatedComment = { ...comment, column: String(over.id) };
     dispatch(addComment(updatedComment));
     await updateCommentFromDatabase(kanbanId, updatedComment.id, { column:updatedComment.column});
   }
@@ -101,7 +104,7 @@ const Main = ({kanbanId}:{kanbanId:string}) => {
   const handleExport = () => {
       const doc = new jsPDF();
 
-      const columnBackgroundColors = {
+      const columnBackgroundColors:{[key:string]:string} = {
           improve: '#FFDDC1',
           necessaries: '#C1E1FF',
           solutions: '#C1FFC1',
@@ -143,7 +146,7 @@ const Main = ({kanbanId}:{kanbanId:string}) => {
               didParseCell: (data) => {
                   data.cell.styles.fillColor = columnBackgroundColors[column.label];
                   data.cell.styles.lineWidth = 0.5;
-                  data.cell.styles.borderColor = [0, 0, 0];
+                  data.cell.styles.lineColor = [0, 0, 0];
               },
               margin: { top: 10, bottom: 10 },
               styles: {
