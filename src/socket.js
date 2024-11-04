@@ -2,6 +2,6 @@
 
 import { io } from "socket.io-client";
 
-export const socket = io("http://localhost:4001", {
+export const socket = io("kanban-velidogan120.vercel.app:4001", {
     withCredentials: true,
   });
