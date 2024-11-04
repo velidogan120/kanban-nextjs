@@ -3,7 +3,7 @@ const http = require("http");
 const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
-const dev = process.env.NODE_ENV;
+const dev = "start-backend";
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
