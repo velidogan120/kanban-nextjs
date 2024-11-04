@@ -41,9 +41,9 @@ const Main = ({kanbanId}:{kanbanId:string}) => {
     initialize();
     document.body.style.backgroundImage = "url(/asset/2.png)";
 
-    socket.on("commentAdded", async(data) => {
+    socket.on("commentAdded", (data) => {
       console.log(data)
-      await initialize();
+      initialize();
     });
 
     socket.on("commentDeleted", async(data) => {
