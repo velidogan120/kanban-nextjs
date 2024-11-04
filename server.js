@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const path = require("path");
 const socketIo = require("socket.io");
 
 const port = process.env.PORT || 4001;
@@ -7,11 +8,13 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://kanban-velidogan120.vercel.app",
+    path: "https://kanban-velidogan120.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   },
   transports: ["websocket", "polling"],
+  addTrailingSlash: false
+
 });
 
 io.on("connection", (socket) => {
