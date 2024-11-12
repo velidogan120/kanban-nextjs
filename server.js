@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://kanban-velidogan120.vercel.app",
+    origin: "https://kanban-nextjs-lemon.vercel.app",
     methods: ["GET", "POST"],
     credentials: true
   },
