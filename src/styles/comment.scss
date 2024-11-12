@@ -1,0 +1,144 @@
+.card{
+  cursor: auto;
+  padding: 0!important;
+  margin: 3px;
+  flex: 100%;
+  width: 100%!important;
+  border-radius: 50px!important;
+}
+.comment.subCard{
+  width:70%;
+  margin: 5px auto;
+  font-weight:bold;
+  max-height: 4rem;
+  overflow:auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .comment_title{
+    font-size:.7rem;
+  }
+  .comment_global_bg{
+    padding: 15px 10px;
+  }
+}
+.comment {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.comment_global_bg {
+  // display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  background-color: #FFF9C4;
+  min-height: 65px;
+  overflow: hidden;
+  
+  position: relative;
+}
+.comment_global_bg:hover,
+.comment_global_bg:hover .comment-item_btn {
+  text-decoration: none;
+  color: #fff;
+}
+.comment_global_bg:hover .comment-item_btn_box{
+    background-color: #121212;
+    color: #fff;
+}
+.comment_global_bg:hover .comment-item_btn_box.deleteBtn{
+    background-color: #fff;
+}
+.comment_global_bg:hover .deleteBtn > *{
+    color: crimson;
+}
+.comment_global_bg:hover .comment-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(20);
+}
+.comment_title {
+  margin: 0 .8rem 0 0;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 1rem;
+  color: #666666;
+
+  z-index: 2;
+  position: relative;
+}
+.comment-item_btn_box {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  height: max-content;
+  border-radius: 10px;
+  padding: 5px 8px;
+  transition: all 0.5s ease;
+  z-index: 2;
+  position: relative;
+  pointer-events: auto!important;
+  border: 0;
+}
+.comment-item_btn {
+  font-weight: bold;
+  color: #f9b234;
+  font-size: 1.7rem;
+  margin-left: .5rem;
+  -webkit-transition: color 0.5s ease;
+  -o-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  cursor: pointer;
+}
+.comment-item_btn_box.deleteBtn{
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.deleteBtn > *{
+    align-self: flex-end;
+    color: crimson;
+    margin: 0;
+}
+.comment-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: rgba(244, 163, 163,.7);
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.card:nth-child(2n) .comment-item_bg {
+  background-color: rgba(255, 218, 185,.7);
+}
+.card:nth-child(3n) .comment-item_bg {
+  background-color: rgba(167, 243, 208,.7);
+}
+.card:nth-child(4n) .comment-item_bg {
+  background-color: rgba(220, 198, 224,.7);
+}
+.card:nth-child(5n) .comment-item_bg {
+  background-color: rgba(250, 218, 221,.7);
+}
+.card:nth-child(6n) .comment-item_bg {
+  background-color: rgba(220, 198, 224,.7);
+}

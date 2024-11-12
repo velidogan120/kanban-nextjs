@@ -1,0 +1,47 @@
+.column{
+    width: 100%;
+}
+
+.column-card{
+    cursor: auto;
+    padding: 0;
+    flex: 100%;
+    width: 100%;
+    background-color: #E0F7D4;
+}
+
+.column-form{
+    width: 100%;
+}
+.column-cards{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#input{
+    background-color: #FFF9E6;
+    font-weight: 600;
+    color: #000;
+    border: none;
+    &::placeholder{
+       color: #aaaaaa;
+       font-weight: 500;
+    }
+    &:focus{
+        border: none;
+    }
+}
+
+.btnSubmit{
+    background: #0056b3 ;
+    transition: all ease-in-out .3s;
+    &:hover{
+        background: #218838 !important;
+    }
+}

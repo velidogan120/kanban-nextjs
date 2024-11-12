@@ -1,0 +1,22 @@
+html{
+    position: relative;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../../public/asset/1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    transition: all 2s;
+    &::before{
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: .3;
+        position: absolute;
+    }
+}

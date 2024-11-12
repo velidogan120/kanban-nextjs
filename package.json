@@ -1,0 +1,49 @@
+{
+  "name": "kanban-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "start-backend": "node server.js"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.5.1",
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/modifiers": "^7.0.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@reduxjs/toolkit": "^2.3.0",
+    "@types/socket.io": "^3.0.2",
+    "antd": "^5.21.5",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "firebase": "^11.0.1",
+    "formik": "^2.4.6",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
+    "next": "14.2.15",
+    "nodemon": "^3.1.7",
+    "pdfmake": "^0.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-loader-spinner": "^6.1.6",
+    "react-redux": "^9.1.2",
+    "react-spinners": "^0.14.1",
+    "react-toastify": "^10.0.6",
+    "sass": "^1.80.3",
+    "socket.io": "^4.8.1",
+    "socket.io-adapter": "^2.5.5",
+    "socket.io-client": "^4.8.1",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/pdfmake": "^0.2.9",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
