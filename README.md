@@ -12,7 +12,13 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+
+To activate socketIo 
+npm run start-backend
 ```
+
+You must change firebase keys for your firestore connect
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
