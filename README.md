@@ -1,42 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📌 Kanban Board (Next.js)
 
-## Getting Started
+A modern **Kanban task management application** built with Next.js.
 
-First, run the development server:
+This project allows users to manage tasks using a visual Kanban board with draggable cards and columns.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
 
+- Drag and drop tasks between columns
+- Create new tasks
+- Delete tasks
+- Move tasks between workflow stages
+- Interactive Kanban board UI
+- Responsive layout
 
-To activate socketIo 
-npm run start-backend
+## 🛠️ Technologies Used
+
+- Next.js (App Router)
+- React
+- TypeScript
+- CSS / SCSS
+- React DnD Kit
+- Socket.io
+- Formik, Yup
+- Redux Toolkit
+- Firebase
+- AntDesign
+
+## 📂 Project Structure
+
+```
+kanban-nextjs
+ ├── src
+    └── app
+    ├── components
+    ├── redux
+    ├── schemas
+    ├── services
+    ├── styles
+    ├── types
+ ├── package.json
+ └── README.md
 ```
 
-You must change firebase keys for your firestore connect
+## ⚙️ Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Clone the repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+git clone https://github.com/velidogan120/kanban-nextjs.git
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install dependencies
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open in browser
 
-## Deploy on Vercel
+```
+http://localhost:3000
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📸 Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p>
+  <img src="public/asset//kanban.png">
+  <img src="public/asset//kanban2.png">
+</p>
+
+## 🎯 Purpose
+
+This project was created to practice:
+
+- Next.js App Router
+- Drag and Drop UI
+- Component based architecture
+- State management
+- Modern frontend development
+
+## 👨‍💻 Author
+
+Veli Doğan
+https://github.com/velidogan120
